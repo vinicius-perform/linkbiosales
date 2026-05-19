@@ -1,0 +1,1072 @@
+/* ==========================================================================
+   DESIGN SYSTEM & CUSTOM PROPERTIES (Vanilla CSS Premium)
+   ========================================================================== */
+:root {
+    /* Cores dot.sales */
+    --color-bg-base: #F8FAFC;
+    --color-bg-light: #FFFFFF;
+    --color-primary: #00B15D;
+    --color-primary-glow: #00C96B;
+    --color-primary-light: #19D97C;
+    --color-text-main: #0B1020;
+    --color-text-muted: #5F6675;
+    --color-border: #E6EAF0;
+    --color-border-hover: rgba(25, 217, 124, 0.4);
+    
+    /* Cores CRM e WhatsApp */
+    --crm-sidebar-bg: #0A0F1D;
+    --crm-content-bg: #F3F5F8;
+    --crm-card-bg: #FFFFFF;
+    --crm-green-btn: #00B15D;
+    --wa-bg: #E5DDD5;
+    --wa-header-bg: #008069;
+    --wa-bubble-received: #FFFFFF;
+    --wa-bubble-sent: #E7FED6;
+    
+    /* Efeitos */
+    --shadow-soft: 0 4px 20px rgba(11, 16, 32, 0.05);
+    --shadow-medium: 0 12px 30px rgba(11, 16, 32, 0.08);
+    --shadow-premium: 0 25px 60px rgba(11, 16, 32, 0.12), 0 4px 15px rgba(25, 217, 124, 0.04);
+    --shadow-device: 0 35px 80px rgba(11, 16, 32, 0.22);
+    --shadow-iphone: -15px 20px 40px rgba(11, 16, 32, 0.3);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ==========================================================================
+   BASE & RESET
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+html, body {
+    width: 100%;
+    min-height: 100vh;
+    font-family: 'Inter', sans-serif;
+    background-color: #E2E8F0; /* Fundo do desktop */
+    color: var(--color-text-main);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+/* ==========================================================================
+   BACKGROUND TECNOLÓGICO (Fundo Clean & Sofisticado)
+   ========================================================================== */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: radial-gradient(circle at 50% 20%, #FFFFFF 0%, #F1F5F9 70%, #E2E8F0 100%);
+    z-index: -2;
+}
+
+.tech-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: -1;
+    opacity: 0.85;
+}
+
+/* ==========================================================================
+   LINK BIO CONTAINER (9:16 vertical, otimizado mobile e desktop)
+   ========================================================================== */
+.linkbio-container {
+    width: 100%;
+    max-width: 500px; /* Mantém a proporção do celular em telas grandes */
+    min-height: 100vh;
+    background-color: var(--color-bg-base);
+    padding: 2.2rem 1.8rem;
+    box-shadow: 0 0 80px rgba(0, 0, 0, 0.08);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    overflow: hidden;
+}
+
+/* Adaptação inteligente para mobile */
+@media (max-width: 500px) {
+    .linkbio-container {
+        max-width: 100%;
+        box-shadow: none;
+        padding: 1.5rem 1.2rem;
+        gap: 1.8rem;
+    }
+}
+
+/* ==========================================================================
+   HEADER SECTION
+   ========================================================================== */
+.header-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    text-align: center;
+}
+
+.logo-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+}
+
+.dot-logo-img {
+    height: 38px;
+    width: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 12px rgba(25, 217, 124, 0.1));
+}
+
+.tagline {
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--color-text-muted);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* ==========================================================================
+   HERO SECTION
+   ========================================================================== */
+.hero-section {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    padding: 0 0.5rem;
+}
+
+.headline {
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -1px;
+    color: var(--color-text-main);
+}
+
+@media (max-width: 380px) {
+    .headline {
+        font-size: 1.75rem;
+    }
+}
+
+.highlight-green {
+    color: var(--color-primary);
+    position: relative;
+    display: inline-block;
+}
+
+.subheadline {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    font-weight: 400;
+    color: var(--color-text-muted);
+    padding: 0 0.8rem;
+}
+
+.highlight-green-bold {
+    color: var(--color-primary);
+    font-weight: 700;
+}
+
+/* ==========================================================================
+   FEATURES SECTOR
+   ========================================================================== */
+.features-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--color-bg-light);
+    border: 1px solid var(--color-border);
+    border-radius: 18px;
+    padding: 1.1rem 0.8rem;
+    box-shadow: var(--shadow-soft);
+}
+
+.feature-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+    text-align: center;
+}
+
+.feature-icon-wrapper {
+    color: var(--color-primary);
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.feature-icon-wrapper svg {
+    width: 100%;
+    height: 100%;
+}
+
+.feature-name {
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--color-text-muted);
+}
+
+.feature-divider {
+    width: 1px;
+    height: 28px;
+    background-color: var(--color-border);
+}
+
+/* ==========================================================================
+   MOCKUP CONTAINER (The 3D Engine)
+   ========================================================================== */
+.mockup-container {
+    height: 240px;
+    position: relative;
+    perspective: 1200px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+@media (max-width: 400px) {
+    .mockup-container {
+        height: 215px;
+    }
+}
+
+/* --- ANIMATION KEYFRAMES --- */
+.floating-effect {
+    animation: float 6s ease-in-out infinite;
+}
+
+.delay-animation {
+    animation-delay: -2s;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px) rotateX(8deg) rotateY(-8deg); }
+    50% { transform: translateY(-12px) rotateX(10deg) rotateY(-6deg); }
+    100% { transform: translateY(0px) rotateX(8deg) rotateY(-8deg); }
+}
+
+/* ==========================================================================
+   MACBOOK PRO 3D
+   ========================================================================== */
+.macbook-device {
+    width: 320px;
+    position: relative;
+    z-index: 1;
+    transform-style: preserve-3d;
+    transform: rotateX(8deg) rotateY(-8deg);
+    transition: var(--transition-smooth);
+}
+
+.macbook-screen-wrap {
+    width: 100%;
+    height: 195px;
+    background-color: #000;
+    border-radius: 12px 12px 0 0;
+    padding: 8px 8px 0 8px;
+    position: relative;
+    box-shadow: 0 -10px 30px rgba(0,0,0,0.1) inset;
+}
+
+/* Notch / Camera do MacBook */
+.macbook-screen-wrap::before {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 4px;
+    background-color: #111;
+    border-radius: 0 0 3px 3px;
+    z-index: 5;
+}
+
+.macbook-screen {
+    width: 100%;
+    height: 100%;
+    background-color: var(--crm-content-bg);
+    border-radius: 6px 6px 0 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.macbook-base {
+    width: 370px;
+    height: 10px;
+    background: linear-gradient(to bottom, #a1a8b0 0%, #7d848a 100%);
+    position: absolute;
+    bottom: -10px;
+    left: -25px;
+    border-radius: 0 0 10px 10px;
+    box-shadow: var(--shadow-device);
+    z-index: 2;
+    transform-style: preserve-3d;
+}
+
+/* Notch de abertura */
+.macbook-base::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 4px;
+    background-color: #4a4e52;
+    border-radius: 0 0 4px 4px;
+}
+
+/* Keyboard and Trackpad simulated visual depth */
+.keyboard-area {
+    width: 310px;
+    height: 3px;
+    background-color: #1a1b1d;
+    margin: 1px auto 0 auto;
+    border-radius: 1px;
+}
+
+.trackpad {
+    width: 60px;
+    height: 1.5px;
+    background-color: #8c939a;
+    margin: 1px auto 0 auto;
+    border-radius: 1px;
+}
+
+/* ==========================================================================
+   INTERFACE INTERNA DO CRM dot.sales (Nitidez Absoluta)
+   ========================================================================== */
+.crm-interface {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    font-size: 5px; /* Base escalável para micro-layout */
+}
+
+/* Sidebar do CRM */
+.crm-sidebar {
+    width: 45px;
+    background-color: var(--crm-sidebar-bg);
+    color: #8A94A6;
+    display: flex;
+    flex-direction: column;
+    padding: 6px 3px;
+    border-right: 0.5px solid #1a2235;
+}
+
+.crm-logo-mini {
+    width: 12px;
+    height: 12px;
+    margin: 0 auto 10px auto;
+}
+
+.crm-menu-items {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.crm-menu-item {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    padding: 3px 4px;
+    border-radius: 2px;
+    cursor: default;
+}
+
+.crm-menu-item.active {
+    background-color: rgba(25, 217, 124, 0.1);
+    color: var(--color-primary-light);
+}
+
+.crm-menu-item.notification {
+    position: relative;
+}
+
+.crm-icon {
+    font-size: 6px;
+}
+
+.crm-item-text {
+    transform: scale(0.8);
+    transform-origin: left center;
+    white-space: nowrap;
+}
+
+.badge-num {
+    background-color: #e63946;
+    color: white;
+    font-size: 3.5px;
+    padding: 0.5px 2px;
+    border-radius: 5px;
+    position: absolute;
+    right: 2px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Área Principal do CRM */
+.crm-main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--crm-content-bg);
+    overflow: hidden;
+}
+
+.crm-topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 8px;
+    background-color: #fff;
+    border-bottom: 0.5px solid #e1e4e8;
+}
+
+.crm-breadcrumbs {
+    color: #6a737d;
+    font-weight: 500;
+}
+
+.crm-actions-row {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+}
+
+.crm-search-bar {
+    display: flex;
+    align-items: center;
+    background-color: #f1f3f5;
+    padding: 2px 4px;
+    border-radius: 3px;
+    border: 0.5px solid #e1e4e8;
+}
+
+.search-icon {
+    font-size: 4px;
+    margin-right: 2px;
+}
+
+.crm-search-bar input {
+    border: none;
+    background: none;
+    font-size: 4px;
+    width: 50px;
+    outline: none;
+}
+
+.btn-crm-new {
+    background-color: var(--crm-green-btn);
+    color: white;
+    border: none;
+    padding: 2px 5px;
+    border-radius: 3px;
+    font-size: 4.5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.crm-funnel-info {
+    padding: 6px 8px 2px 8px;
+}
+
+.crm-funnel-info h2 {
+    font-size: 8px;
+    font-weight: 700;
+    color: var(--color-text-main);
+}
+
+.crm-funnel-info p {
+    font-size: 5px;
+    color: var(--color-text-muted);
+}
+
+.crm-funnel-info span {
+    font-weight: bold;
+    color: var(--color-text-main);
+}
+
+/* Kanban Board */
+.crm-kanban-board {
+    display: flex;
+    gap: 5px;
+    padding: 6px 8px;
+    flex: 1;
+    overflow-x: auto;
+}
+
+.kanban-column {
+    flex: 1;
+    min-width: 50px;
+    background-color: rgba(240, 242, 245, 0.6);
+    border-radius: 4px;
+    padding: 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.column-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 3px;
+    border-bottom: 0.5px solid #e1e4e8;
+    margin-bottom: 2px;
+}
+
+.col-title {
+    font-weight: 700;
+    color: #4f5660;
+    font-size: 4.5px;
+}
+
+.col-count {
+    color: #959da5;
+}
+
+.col-value {
+    color: #6a737d;
+    font-size: 4px;
+}
+
+.kanban-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    overflow-y: auto;
+}
+
+.kanban-card {
+    background-color: var(--crm-card-bg);
+    border-radius: 3px;
+    padding: 4px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    border: 0.5px solid #e1e4e8;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.card-lead-info {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
+.avatar {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 3.5px;
+}
+
+.av-1 { background-color: #ff5a5f; }
+.av-2 { background-color: #3b5998; }
+.av-3 { background-color: #8b9dc3; }
+.av-4 { background-color: #0084ff; }
+.av-5 { background-color: #e91e63; }
+
+.lead-meta {
+    display: flex;
+    flex-direction: column;
+}
+
+.lead-meta h4 {
+    font-size: 4.5px;
+    font-weight: 700;
+    color: #24292e;
+}
+
+.card-time {
+    font-size: 3px;
+    color: #959da5;
+}
+
+.source-tag {
+    font-size: 3px;
+    padding: 1px 3px;
+    border-radius: 10px;
+    align-self: flex-start;
+    font-weight: 500;
+}
+
+.source-tag.inst {
+    background-color: rgba(225, 48, 108, 0.1);
+    color: #e1306c;
+}
+
+.source-tag.wa {
+    background-color: rgba(37, 211, 102, 0.1);
+    color: #25d366;
+}
+
+.card-icons {
+    font-size: 3.5px;
+    color: #959da5;
+    margin-top: 1px;
+}
+
+/* ==========================================================================
+   IPHONE DEVICE 3D (Sobreposto)
+   ========================================================================== */
+.iphone-device {
+    width: 125px;
+    height: 240px;
+    background-color: #000;
+    border: 3.5px solid #2e3033;
+    border-radius: 24px;
+    position: absolute;
+    right: 5px;
+    bottom: -15px;
+    z-index: 10;
+    box-shadow: var(--shadow-iphone);
+    transform: rotateX(8deg) rotateY(-8deg) rotateZ(3deg);
+    overflow: hidden;
+    transition: var(--transition-smooth);
+}
+
+.iphone-notch {
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 10px;
+    background-color: #000;
+    border-radius: 10px;
+    z-index: 15;
+}
+
+.iphone-screen {
+    width: 100%;
+    height: 100%;
+    background-color: var(--wa-bg);
+    position: relative;
+    overflow: hidden;
+    padding-top: 16px; /* Espaço do notch/top bar */
+}
+
+/* ==========================================================================
+   WHATSAPP INTERFACE
+   ========================================================================== */
+.whatsapp-interface {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.wa-header {
+    background-color: var(--wa-header-bg);
+    color: #fff;
+    padding: 6px 8px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    height: 32px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    z-index: 5;
+}
+
+.wa-back-btn {
+    width: 8px;
+    height: 8px;
+    display: flex;
+    align-items: center;
+    color: #fff;
+}
+
+.wa-back-btn svg {
+    width: 100%;
+    height: 100%;
+}
+
+.wa-contact-pic {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.wa-contact-pic svg {
+    width: 100%;
+    height: 100%;
+}
+
+.wa-contact-info {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.wa-contact-name {
+    font-size: 8px;
+    font-weight: 600;
+    line-height: 1.1;
+}
+
+.wa-contact-status {
+    font-size: 5px;
+    color: rgba(255,255,255,0.85);
+}
+
+.wa-call-icons {
+    display: flex;
+    gap: 6px;
+    font-size: 8px;
+    opacity: 0.9;
+}
+
+/* Mensagens container */
+.wa-messages-container {
+    flex: 1;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    overflow-y: auto;
+    background-image: radial-gradient(rgba(0, 0, 0, 0.04) 1px, transparent 0);
+    background-size: 8px 8px;
+}
+
+.wa-msg {
+    max-width: 85%;
+    padding: 5px 6px;
+    border-radius: 6px;
+    font-size: 7px;
+    line-height: 1.3;
+    position: relative;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.08);
+}
+
+.wa-msg-received {
+    align-self: flex-start;
+    background-color: var(--wa-bubble-received);
+    color: var(--color-text-main);
+    border-top-left-radius: 0px;
+}
+
+.wa-msg-sent {
+    align-self: flex-end;
+    background-color: var(--wa-bubble-sent);
+    color: var(--color-text-main);
+    border-top-right-radius: 0px;
+}
+
+.wa-msg-time {
+    display: block;
+    text-align: right;
+    font-size: 4.5px;
+    color: var(--color-text-muted);
+    margin-top: 2px;
+}
+
+.check-double {
+    color: #53bdeb;
+    font-weight: bold;
+}
+
+/* Animações e Simulações */
+.animate-pop {
+    animation: pop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+@keyframes pop {
+    0% { transform: scale(0.8); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* WhatsApp Footer */
+.wa-footer {
+    padding: 4px 6px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    background: transparent;
+    z-index: 5;
+}
+
+.wa-input-container {
+    flex: 1;
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 3px 6px;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.wa-input-icon {
+    font-size: 8px;
+    color: #8c9094;
+}
+
+.wa-input-container input {
+    border: none;
+    outline: none;
+    font-size: 6.5px;
+    flex: 1;
+    background: none;
+}
+
+.wa-input-icon-right {
+    font-size: 7.5px;
+    color: #8c9094;
+}
+
+.wa-mic-btn {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: var(--wa-header-bg);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 8px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+/* ==========================================================================
+   ACTION BUTTONS (Premium & High-Converting CTA)
+   ========================================================================== */
+.buttons-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 0.5rem 0.2rem;
+}
+
+.btn-premium {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.1rem 1.4rem;
+    border-radius: 20px;
+    text-decoration: none;
+    transition: var(--transition-smooth);
+}
+
+/* Botão Principal: Verde Sólido Premium */
+.btn-primary {
+    background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-primary) 100%);
+    box-shadow: 0 10px 25px rgba(25, 217, 124, 0.25), 0 2px 6px rgba(25, 217, 124, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(25, 217, 124, 0.35), 0 4px 12px rgba(25, 217, 124, 0.2);
+    background: linear-gradient(135deg, #1ce383 0%, #00be64 100%);
+}
+
+.btn-primary:active {
+    transform: translateY(-1px);
+}
+
+.btn-left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.btn-icon-bg {
+    width: 44px;
+    height: 44px;
+    background-color: var(--color-bg-light);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-primary);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+}
+
+.btn-icon-bg svg {
+    width: 20px;
+    height: 20px;
+}
+
+.btn-text-block {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    text-align: left;
+}
+
+.btn-main-text {
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: #FFFFFF;
+    letter-spacing: -0.3px;
+}
+
+.btn-sub-text {
+    font-size: 0.72rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.btn-arrow {
+    color: #FFFFFF;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition-smooth);
+}
+
+.btn-primary:hover .btn-arrow {
+    transform: translateX(4px);
+}
+
+.btn-arrow svg {
+    width: 100%;
+    height: 100%;
+}
+
+/* Botão Secundário: Fundo Branco e Borda */
+.btn-secondary {
+    background-color: var(--color-bg-light);
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-soft);
+}
+
+.btn-secondary:hover {
+    transform: translateY(-3px);
+    border-color: var(--color-border-hover);
+    box-shadow: var(--shadow-medium);
+}
+
+.btn-secondary:active {
+    transform: translateY(-1px);
+}
+
+.btn-icon-bg.shadow-border {
+    border: 1px solid var(--color-border);
+    background-color: var(--color-bg-base);
+    color: var(--color-primary);
+}
+
+.dark-text {
+    color: var(--color-text-main);
+}
+
+.dark-arrow {
+    color: var(--color-text-muted);
+}
+
+.btn-secondary:hover .dark-arrow {
+    transform: translateX(4px);
+    color: var(--color-primary);
+}
+
+/* ==========================================================================
+   METRICS FOOTER
+   ========================================================================== */
+.metrics-footer {
+    margin-top: auto;
+    padding-top: 1.5rem;
+    border-top: 1px dashed var(--color-border);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.2rem;
+}
+
+.metric-item {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    background: transparent;
+    padding: 0.2rem;
+}
+
+.metric-icon {
+    width: 36px;
+    height: 36px;
+    min-width: 36px;
+    background-color: rgba(25, 217, 124, 0.08);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-primary);
+}
+
+.metric-icon svg {
+    width: 18px;
+    height: 18px;
+}
+
+.metric-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.05rem;
+}
+
+.metric-info h3 {
+    font-size: 0.95rem;
+    font-weight: 800;
+    color: var(--color-text-main);
+    letter-spacing: -0.5px;
+    line-height: 1.1;
+}
+
+.metric-info p {
+    font-size: 0.58rem;
+    font-weight: 700;
+    color: var(--color-text-muted);
+    letter-spacing: 0.5px;
+}
+
+/* Ajuste fino para métricas em telas muito pequenas */
+@media (max-width: 350px) {
+    .metrics-footer {
+        gap: 0.8rem;
+    }
+    .metric-info h3 {
+        font-size: 0.85rem;
+    }
+    .metric-info p {
+        font-size: 0.52rem;
+    }
+}
